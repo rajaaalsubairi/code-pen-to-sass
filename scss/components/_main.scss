@@ -16,3 +16,56 @@ html {
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+body {
+background-color: $bg;
+}
+
+.button {
+ @include button (10%);
+}
+
+.button-2 {
+@include button (40%);
+}
+
+.button-3 {
+  @include button (70%);
+}
+
+
+a {
+  color: $primary;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-feature-settings: "smcp";
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-kerning: normal;
+}
+
+.button span{
+  position: absolute;
+  top: -8px;
+  left: -225px;
+  display: block;
+  width: 220px;
+  height: 42px;
+  background: $primary;
+  transition: all .15s linear;
+}
+
+.button:hover a {
+  color: white;
+  transition: all .15s linear;
+}
+.button:hover span {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  transition: all .15s linear;
+  z-index: -1;
+}

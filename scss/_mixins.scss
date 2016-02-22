@@ -1,0 +1,16 @@
+@mixin button ($top) {
+ position: absolute;
+  top: $top;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -110px;
+  
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 30px;
+  overflow: hidden;
+  border: 1px solid $primary;
+  text-align: center;
+}
+

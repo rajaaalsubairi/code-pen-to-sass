@@ -12,25 +12,30 @@
   display: -ms-flexbox;
   -ms-flex-flow: row wrap;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .grid-bottom {
   -webkit-align-items: flex-end;
   -ms-align-items: flex-end;
-  align-items: flex-end;
+  -ms-flex-align: end;
+      align-items: flex-end;
 }
 
 .grid-middle {
   -webkit-align-items: center;
   -ms-align-items: center;
-  align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .grid-stretch {
   -webkit-align-items: stretch;
   -ms-align-items: stretch;
-  align-items: stretch;
+  -ms-flex-align: stretch;
+      align-items: stretch;
 }
 
 .opera-only :-o-prefocus, .grid {
@@ -1010,7 +1015,8 @@
 .content-fill {
   -ms-flex-grow: 2;
   -webkit-flex-grow: 2;
-  flex-grow: 2;
+  -ms-flex-positive: 2;
+      flex-grow: 2;
   max-width: 100%;
   /* @bugfix: IE 10, 11 */
 }
@@ -1018,7 +1024,8 @@
 .content-shrink {
   -ms-align-self: center;
   -webkit-align-self: center;
-  align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
 }
 
 @-moz-viewport {
@@ -1027,11 +1034,6 @@
 }
 
 @-ms-viewport {
-  width: device-width;
-  scale: 1;
-}
-
-@-o-viewport {
   width: device-width;
   scale: 1;
 }
@@ -1048,7 +1050,6 @@
 
 html {
   box-sizing: border-box;
-  -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -1056,4 +1057,91 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+body {
+  background-color: black;
+}
+
+.button {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -110px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 30px;
+  overflow: hidden;
+  border: 1px solid pink;
+  text-align: center;
+}
+
+.button-2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -110px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 30px;
+  overflow: hidden;
+  border: 1px solid pink;
+  text-align: center;
+}
+
+.button-3 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -110px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 30px;
+  overflow: hidden;
+  border: 1px solid pink;
+  text-align: center;
+}
+
+a {
+  color: pink;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-feature-settings: "smcp";
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+}
+
+.button span {
+  position: absolute;
+  top: -8px;
+  left: -225px;
+  display: block;
+  width: 220px;
+  height: 42px;
+  background: pink;
+  transition: all .15s linear;
+}
+
+.button:hover a {
+  color: white;
+  transition: all .15s linear;
+}
+
+.button:hover span {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  transition: all .15s linear;
+  z-index: -1;
 }
